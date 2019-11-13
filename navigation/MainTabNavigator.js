@@ -2,13 +2,16 @@ import React from 'react';
 import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
-import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import { Feather } from '@expo/vector-icons';
 
 const config = Platform.select({
-  web: { headerMode: 'screen' },
+  web: {
+    headerMode: 'screen',
+    headerStyle: {backgroundColor: 'green'}
+  },
   default: {},
 });
 
@@ -20,17 +23,8 @@ const HomeStack = createStackNavigator(
 );
 
 HomeStack.navigationOptions = {
-  tabBarLabel: 'Home',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={
-        Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
-      }
-    />
-  ),
+  tabBarLabel: ' ',
+  tabBarIcon: <Feather name="home" size={32} color="green" />
 };
 
 HomeStack.path = '';
@@ -43,10 +37,8 @@ const LinksStack = createStackNavigator(
 );
 
 LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'} />
-  ),
+  tabBarLabel: ' ',
+  tabBarIcon: <Feather name="plus-circle" size={32} color="green" />
 };
 
 LinksStack.path = '';
@@ -59,10 +51,8 @@ const SettingsStack = createStackNavigator(
 );
 
 SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
-  ),
+  tabBarLabel: ' ',
+  tabBarIcon: <Feather name="user" size={32} color="green" />
 };
 
 SettingsStack.path = '';
