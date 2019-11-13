@@ -4,6 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import Colors from '../constants/Colors';
 
 export default function TabBarIcon(props) {
+  console.log(props)
   return (
     <Ionicons
       name={props.name}
