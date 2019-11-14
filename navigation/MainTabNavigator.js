@@ -24,7 +24,7 @@ const HomeStack = createStackNavigator(
 
 HomeStack.navigationOptions = {
   tabBarLabel: ' ',
-  tabBarIcon: <Feather name="home" size={32} color="green" />
+  tabBarIcon: <Feather name="home" size={32} color="white" />
 };
 
 HomeStack.path = '';
@@ -38,7 +38,7 @@ const LinksStack = createStackNavigator(
 
 LinksStack.navigationOptions = {
   tabBarLabel: ' ',
-  tabBarIcon: <Feather name="plus-circle" size={32} color="green" />
+  tabBarIcon: <Feather name="plus-circle" size={32} color="white" />
 };
 
 LinksStack.path = '';
@@ -52,16 +52,28 @@ const SettingsStack = createStackNavigator(
 
 SettingsStack.navigationOptions = {
   tabBarLabel: ' ',
-  tabBarIcon: <Feather name="user" size={32} color="green" />
+  tabBarIcon: <Feather name="user" size={32} color="white" />
 };
 
 SettingsStack.path = '';
 
-const tabNavigator = createBottomTabNavigator({
+const tabNavigator = createBottomTabNavigator(
+  {
   HomeStack,
   LinksStack,
   SettingsStack,
-});
+  },
+  {
+    tabBarOptions: {
+      activeTintColor: '#FF6F00',
+      inactiveTintColor: 'grey',
+      style: {
+        backgroundColor: '#4CAF50',
+        paddingTop: 3,
+     }
+    }
+  }
+);
 
 tabNavigator.path = '';
 
