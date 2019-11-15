@@ -7,13 +7,29 @@ import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import { Feather } from '@expo/vector-icons';
 
-const config = Platform.select({
+const config = Platform.select(
+  {
   web: {
-    headerMode: 'screen',
-    headerStyle: {backgroundColor: 'green'}
+    headerMode: 'false',
+    headerStyle: {
+        style: {
+          backgroundColor: 'green'
+        }
+      }
   },
   default: {},
-});
+  },
+  {
+    defaultNavigationOptions: {
+      headerStyle: {
+        backgroundColor: '#0091EA',
+      },
+      headerTintColor: '#fff',
+      title: 'Home Tab',
+     
+    },
+  }
+);
 
 const HomeStack = createStackNavigator(
   {
@@ -23,7 +39,7 @@ const HomeStack = createStackNavigator(
 );
 
 HomeStack.navigationOptions = {
-  tabBarLabel: ' ',
+  tabBarLabel: 'Home',
   tabBarIcon: <Feather name="home" size={32} color="white" />
 };
 
@@ -37,7 +53,7 @@ const LinksStack = createStackNavigator(
 );
 
 LinksStack.navigationOptions = {
-  tabBarLabel: ' ',
+  tabBarLabel: 'New',
   tabBarIcon: <Feather name="plus-circle" size={32} color="white" />
 };
 
@@ -51,8 +67,8 @@ const SettingsStack = createStackNavigator(
 );
 
 SettingsStack.navigationOptions = {
-  tabBarLabel: ' ',
-  tabBarIcon: <Feather name="user" size={32} color="white" />
+  tabBarLabel: 'Profile',
+  tabBarIcon: <Feather name="user" size={32} color="white" tintColor='red'/>
 };
 
 SettingsStack.path = '';
@@ -65,8 +81,8 @@ const tabNavigator = createBottomTabNavigator(
   },
   {
     tabBarOptions: {
-      activeTintColor: '#FF6F00',
-      inactiveTintColor: 'grey',
+      activeTintColor: 'grey',
+      inactiveTintColor: 'white',
       style: {
         backgroundColor: '#4CAF50',
         paddingTop: 3,
