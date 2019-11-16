@@ -10,8 +10,12 @@ export default function NewPost() {
 }
 
 NewPost.navigationOptions = {
-  title: '',
+  title: 'Eco - Traveller',
   headerStyle: { backgroundColor: '#4CAF50' },
+  headerTitleStyle: {
+    fontSize: 25,
+    fontFamily: 'Yolluq'
+  }
 };
 
 const styles = StyleSheet.create({

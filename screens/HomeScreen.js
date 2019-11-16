@@ -17,8 +17,12 @@ export default function HomeScreen() {
 
 
 HomeScreen.navigationOptions = {
-  title: '',
+  title: 'Eco - Traveller',
   headerStyle: { backgroundColor: '#4CAF50' },
+  headerTitleStyle: {
+    fontSize:25,
+    fontFamily: 'Yolluq'
+  }
 };
 
 

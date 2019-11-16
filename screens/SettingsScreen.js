@@ -12,13 +12,18 @@ export default function SettingsScreen() {
 }
 
 SettingsScreen.navigationOptions = {
-  title: '',
+  title: 'Eco - Traveller',
   headerStyle: { backgroundColor: '#4CAF50' },
+  headerTitleStyle: {
+    fontSize: 25,
+    fontFamily: 'Yolluq'
+  }
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1, 
+    fontFamily: 'Yolluq'
   },
   profile: {
     fontSize: 40,
