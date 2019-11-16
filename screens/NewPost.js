@@ -5,6 +5,9 @@ export default function NewPost() {
   return (
     <ScrollView style={styles.container}>
       <Text style={styles.newPost}>New Post Page</Text>
+      {/* Renders a form here, User can post Pics and save it to the data base
+      How to intergrate Cloudinary in here  with React Native
+      https://cloudinary.com/visualweb/display/IMMC/React+Native+Image+Upload */}
     </ScrollView>
   );
 }

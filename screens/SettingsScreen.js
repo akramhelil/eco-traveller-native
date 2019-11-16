@@ -6,6 +6,8 @@ export default function SettingsScreen() {
     <View style={styles.container}>
       <Text style={styles.profile}>
        This is the Setting and Profile Page
+         {/* Put all the User Profile Information in here, meybe need more logic 
+         such as UPdate action on the User Profile*/}
       </Text>
    </View>
   );
