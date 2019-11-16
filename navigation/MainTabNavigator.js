@@ -10,10 +10,7 @@ import { Feather } from '@expo/vector-icons';
 const config = Platform.select(
   {
   web: {
-    headerMode: '',
-    headerStyle: {
-          backgroundColor: 'green'
-    }
+    headerMode: ''
   }
   },
 );
