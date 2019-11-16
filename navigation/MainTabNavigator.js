@@ -3,32 +3,19 @@ import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
 import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
+import NewPost from '../screens/NewPost';
 import SettingsScreen from '../screens/SettingsScreen';
 import { Feather } from '@expo/vector-icons';
 
 const config = Platform.select(
   {
   web: {
-    headerMode: 'false',
+    headerMode: '',
     headerStyle: {
-        style: {
           backgroundColor: 'green'
-        }
-      }
-  },
-  default: {},
-  },
-  {
-    defaultNavigationOptions: {
-      headerStyle: {
-        backgroundColor: '#0091EA',
-      },
-      headerTintColor: '#fff',
-      title: 'Home Tab',
-     
-    },
+    }
   }
+  },
 );
 
 const HomeStack = createStackNavigator(
@@ -40,24 +27,24 @@ const HomeStack = createStackNavigator(
 
 HomeStack.navigationOptions = {
   tabBarLabel: 'Home',
-  tabBarIcon: <Feather name="home" size={32} color="white" />
+  tabBarIcon: <Feather name="home" size={32} color="white" />,
 };
 
 HomeStack.path = '';
 
-const LinksStack = createStackNavigator(
+const NewPostStack = createStackNavigator(
   {
-    Links: LinksScreen,
+    Links: NewPost,
   },
   config
 );
 
-LinksStack.navigationOptions = {
+NewPostStack.navigationOptions = {
   tabBarLabel: 'New',
   tabBarIcon: <Feather name="plus-circle" size={32} color="white" />
 };
 
-LinksStack.path = '';
+NewPostStack.path = '';
 
 const SettingsStack = createStackNavigator(
   {
@@ -76,7 +63,7 @@ SettingsStack.path = '';
 const tabNavigator = createBottomTabNavigator(
   {
   HomeStack,
-  LinksStack,
+  NewPostStack,
   SettingsStack,
   },
   {
